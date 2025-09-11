@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+
+@theme {
+  --color-brand: #6d28d9; /* purple brand */
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+}
+
+/* Global page styles */
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Nice scroll for macOS vibe */
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
+
+/* small utility for glass card */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px) saturate(120%);
+}
+
+/* tilt preserves perspective */
+.tilt-container { perspective: 1200px; }
+
+html {
+  background-color: black;
+}
+
+body {
+  /* It's often good practice to reset the body's margin to 0 to prevent unexpected white space */
+  margin: 0;
+}
