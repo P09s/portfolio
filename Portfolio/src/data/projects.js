@@ -1,21 +1,22 @@
-export default [
-    {
-      id: "p1",
-      title: "SilentVoice",
-      tagline: "Sign language → Text in realtime",
-      description: "AI pipeline using CV + ML that translates gestures to text and speech. Built with React, TensorFlow, Flask.",
-      image: "/proj1.png",
-      demo: "#",
-      repo: "#"
-    },
-    {
-      id: "p2",
-      title: "Orbcura",
-      tagline: "Accessibility suite",
-      description: "Mobile-first accessibility app for visually/auditorily impaired users. Flutter + TTS + Computer Vision.",
-      image: "/proj2.png",
-      demo: "#",
-      repo: "#"
-    }
-  ];
-  
+const projects = [
+  {
+    id: "silentvoice",
+    title: "SilentVoice",
+    tagline: "Sign Language → Real-time Text & Speech",
+    description: "AI pipeline using CV + ML to translate gestures into text and speech, built with React, TensorFlow and Flask.",
+    image: "/proj1.png",
+    demo: "#",
+    repo: "#"
+  },
+  {
+    id: "orbcura",
+    title: "Orbcura",
+    tagline: "Accessibility Suite",
+    description: "Mobile-first accessibility app for visually and auditorily impaired users. Flutter + TTS + CV.",
+    image: "/proj2.png",
+    demo: "#",
+    repo: "#"
+  }
+];
+
+export default projects;

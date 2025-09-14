@@ -1,0 +1,99 @@
+/* Additional component-specific styles */
+.portfolio-container {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Enhanced glass morphism effects */
+  .glass-strong {
+    background: linear-gradient(135deg, 
+      rgba(0, 255, 136, 0.15) 0%,
+      rgba(136, 0, 255, 0.08) 50%,
+      rgba(255, 0, 128, 0.15) 100%
+    );
+    backdrop-filter: blur(25px) saturate(200%);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 20px;
+    box-shadow: 
+      0 8px 32px rgba(0, 255, 136, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Navigation dot styles */
+  .nav-dot {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-dot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  
+  .nav-dot:hover::before {
+    transform: translateX(100%);
+  }
+  
+  /* Enhanced button animations */
+  .btn-cyber {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(136,0,255,0.1));
+    border: 2px solid rgba(0,255,136,0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-cyber::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-cyber:hover::before {
+    left: 100%;
+  }
+  
+  /* Loading states */
+  .loading-shimmer {
+    background: linear-gradient(90deg, 
+      rgba(255,255,255,0.0) 0%, 
+      rgba(255,255,255,0.1) 50%, 
+      rgba(255,255,255,0.0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Smooth scrolling for all devices */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  /* Focus states for accessibility */
+  .focus-visible {
+    outline: 2px solid rgba(0,255,136,0.8);
+    outline-offset: 2px;
+  }
+  
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
