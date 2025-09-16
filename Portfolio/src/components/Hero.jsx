@@ -7,10 +7,10 @@ export default function Hero() {
   
   const roles = [
     "CREATIVE DEVELOPER",
-    "AI ENGINEER", 
-    "AR/VR SPECIALIST",
+    "COMMUNITY LEADER",
+    "ANI - TUBER", 
     "FULL-STACK DEVELOPER",
-    "FUTURE ARCHITECT"
+    "SALESFORCE AI ASSOCIATE"
   ];
 
   const glitchVariants = {
@@ -38,7 +38,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen text-center text-white overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center min-h-screen text-center text-white overflow-hidden pt-20 md:pt-0">
       {/* Dynamic Background Orbs */}
       <motion.div 
         animate={{ 
@@ -273,7 +273,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 3 }}
-        className="fixed bottom-8 right-8 z-30"
+        className="fixed bottom-8 right-8 z-30 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

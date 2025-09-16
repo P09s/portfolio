@@ -34,21 +34,44 @@ html, body, #root {
 }
 
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { 
-  width: 6px; 
+/* Base scrollbar styles - visible on desktop */
+body::-webkit-scrollbar {
+  width: 6px;
 }
-::-webkit-scrollbar-track {
+
+body::-webkit-scrollbar-track {
   background: var(--bg-secondary);
 }
-::-webkit-scrollbar-thumb {
+
+body::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--neon-primary), var(--neon-accent));
   border-radius: 10px;
-  box-shadow: var(--glow-primary);
+  outline: 1px solid var(--neon-primary);
 }
-::-webkit-scrollbar-thumb:hover {
+
+body::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--neon-secondary), var(--neon-primary));
 }
+
+/* Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-primary) var(--bg-secondary);
+}
+
+/* Hide scrollbar on small screens but allow scrolling */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* scrolling still works */
+    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+}
+
 
 /* AGGRESSIVE GLASS FIX - Pre-render backdrop-filter */
 * {
