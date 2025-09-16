@@ -74,7 +74,7 @@ function DockIcon({ icon, index }) {
         stiffness: 200
       }}
       whileHover={{ 
-        scale: 1.3, 
+        scale: 0.95, 
         y: -12,
         rotate: [0, -5, 5, 0],
         transition: { duration: 0.3 }
