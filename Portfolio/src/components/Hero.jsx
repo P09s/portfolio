@@ -162,10 +162,10 @@ export default function Hero() {
         >
           <div className="holographic absolute inset-0 rounded-xl"></div>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed relative z-10 p-6 glass rounded-xl">
-            Architecting the <span className="neon-text-primary font-semibold">future of digital experiences</span> through 
-            <span className="neon-text-secondary font-semibold"> cutting-edge AI</span>, 
-            <span className="neon-text-accent font-semibold"> immersive AR/VR</span>, and 
-            <span className="gradient-text font-semibold"> revolutionary interfaces</span> that transcend reality.
+            Think less <span className="neon-text-primary font-semibold">corporate jargon</span> more 
+            <span className="neon-text-secondary font-semibold"> fantasy adventure</span>, 
+            <span className="neon-text-accent font-semibold"> with GPUs</span>, and 
+            <span className="gradient-text font-semibold"> as sidekicks</span> running at 120fps.
           </p>
         </motion.div>
 

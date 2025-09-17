@@ -120,22 +120,24 @@ export default function About() {
                   <span className="text-4xl">🚀</span> Who Am I?
                 </h3>
                 <div className="space-y-4 text-gray-300 leading-relaxed relative z-10">
-                  <p>
-                    I'm a <span className="gradient-text font-semibold">visionary developer</span> who 
-                    bridges the gap between <span className="neon-text-primary">imagination</span> and 
-                    <span className="neon-text-secondary"> reality</span>. My mission is to craft 
-                    digital experiences that don't just serve users—they <em>inspire</em> them.
-                  </p>
-                  <p>
-                    With expertise spanning <span className="neon-text-accent">AI/ML</span>, 
-                    <span className="text-purple-400"> AR/VR</span>, and 
-                    <span className="text-pink-400"> full-stack development</span>, I architect 
-                    solutions that push the boundaries of what's possible in the digital realm.
-                  </p>
-                  <p>
-                    Currently leading <span className="font-bold neon-text-primary">1000+ developers</span> as 
-                    GDSC President while building the future, one revolutionary project at a time.
-                  </p>
+                <p>
+                Hey, I’m <span className="gradient-text font-semibold">Parag</span> — a developer who loves building 
+                experiences that feel <span className="neon-text-primary">fun</span>, 
+                <span className="neon-text-secondary">useful</span>, and a little magical.
+              </p>
+
+              <p>
+                I tinker with <span className="neon-text-accent">AI/ML</span>, explore 
+                <span className="text-purple-400"> AR/VR</span>, build full-stack apps, and 
+                <span className="text-pink-400 font-semibold"> create websites</span> 
+                On the side, I also run a YouTube channel with 5k+ anime fans.
+              </p>
+
+              <p>
+                Currently leading a <span className="font-bold neon-text-primary">1000+ member community</span> 
+                as GDSC President, while organizing hackathons and events that connect people through code.
+              </p>
+
                 </div>
               </motion.div>
 
@@ -148,8 +150,7 @@ export default function About() {
                   <span>💭</span> Philosophy
                 </h4>
                 <p className="text-gray-300 italic">
-                  "Technology should be indistinguishable from magic, and every line of code 
-                  should bring us closer to that impossibly beautiful future."
+                "Wake up to reality — in code, nothing ever goes exactly as planned.
                 </p>
               </motion.div>
             </div>
@@ -158,7 +159,7 @@ export default function About() {
             <div className="space-y-6">
               {[
                 { label: "Years of Experience", value: "3+", suffix: "", color: "neon-text-primary" },
-                { label: "Projects Completed", value: "50", suffix: "+", color: "neon-text-secondary" },
+                { label: "Projects Completed", value: "15", suffix: "+", color: "neon-text-secondary" },
                 { label: "Community Impact", value: "1K", suffix: "+ devs", color: "neon-text-accent" },
                 { label: "Lines of Code", value: "100K", suffix: "+", color: "text-pink-400" }
               ].map((stat, index) => (

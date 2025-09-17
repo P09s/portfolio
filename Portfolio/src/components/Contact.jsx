@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Github, Linkedin, Mail, Globe} from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      icon: "📧",
+      icon: <Mail className="w-8 h-8 text-white" />,
       title: "Email",
       value: "sharmaparag2004@gmail.com",
       description: "For detailed discussions and project inquiries",
@@ -21,7 +22,7 @@ export default function Contact() {
       action: "mailto:sharmaparag2004@gmail.com"
     },
     {
-      icon: "💼",
+      icon: <Linkedin className="w-8 h-8 text-white" />,
       title: "LinkedIn",
       value: "in/p09s",
       description: "Professional networking and career opportunities",
@@ -29,7 +30,7 @@ export default function Contact() {
       action: "https://www.linkedin.com/in/p09s/"
     },
     {
-      icon: "💻",
+      icon: <Github className="w-8 h-8 text-white" />,
       title: "GitHub",
       value: "github.com/P09s",
       description: "Explore my code and contribute to projects",
@@ -37,7 +38,7 @@ export default function Contact() {
       action: "https://github.com/P09s"
     },
     {
-      icon: "🌐",
+      icon: <Globe className="w-8 h-8 text-white" />,
       title: "Portfolio",
       value: "g.dev/parag_09",
       description: "Comprehensive showcase of my work",
@@ -45,6 +46,7 @@ export default function Contact() {
       action: "https://g.dev/parag_09"
     }
   ];
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
