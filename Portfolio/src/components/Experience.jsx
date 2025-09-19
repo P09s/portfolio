@@ -6,80 +6,80 @@ export default function Experience() {
 
   const experiences = [
     {
-      year: "2025",
+      year: "2024",
       period: "Present",
-      role: "GDSC President & Tech Lead",
+      role: "President",
       company: "Google Developer Student Club",
       type: "Leadership",
-      location: "University Campus",
-      description: "Leading a vibrant community of 1000+ developers, organizing cutting-edge workshops, hackathons, and tech events. Spearheading initiatives in AI, Web3, and emerging technologies.",
+      location: "MM University, India",
+      description: "Leading a team of 30+ developers and organizing events for 1,000+ members to grow the tech community. Spearheading initiatives in AI, mobile development, and emerging technologies.",
       achievements: [
-        "Grew community from 200 to 1000+ active members",
-        "Organized 15+ technical workshops and events",
-        "Mentored 50+ students in career development",
-        "Launched 3 major community projects"
+        "Led a team of 30+ developers",
+        "Organized events for 1,000+ members",
+        "Facilitated Google Cloud GenAI Study Jams'24 - Taught 150+ students",
+        "Facilitated Google's Android Workshop'23 - Taught 100+ students"
       ],
-      skills: ["Leadership", "Community Management", "Event Planning", "Mentoring"],
+      skills: ["Leadership", "Community Management", "Event Planning", "Teaching", "Public Speaking"],
       icon: "👑",
       color: "from-yellow-400 to-orange-500",
       glowColor: "shadow-yellow-500/50"
     },
     {
       year: "2024",
-      period: "Multiple Events",
-      role: "Hackathon Champion",
-      company: "National & International Competitions",
-      type: "Competition",
-      location: "Various Locations",
-      description: "Dominated the hackathon circuit with innovative solutions combining AI, AR/VR, and social impact. Consistently placed in top positions across prestigious competitions.",
+      period: "May - Jun 2024",
+      role: "Salesforce Intern",
+      company: "TriColor Initiatives Pvt. Ltd.",
+      type: "Internship",
+      location: "India",
+      description: "Developed expertise in Salesforce CRM and earned certification as a Salesforce AI Associate. Gained hands-on experience with enterprise-level CRM solutions and AI integrations.",
       achievements: [
-        "Won 15+ hackathons across different domains",
-        "Built SilentVoice - AI sign language translator",
-        "Developed Orbcura - accessibility suite",
-        "Prize money totaling $50,000+"
+        "Developed expertise in Salesforce CRM",
+        "Certified as Salesforce AI Associate",
+        "Worked with enterprise CRM solutions",
+        "Gained experience in AI-powered business tools"
       ],
-      skills: ["Rapid Prototyping", "Team Leadership", "AI/ML", "Problem Solving"],
-      icon: "🏆",
-      color: "from-green-400 to-emerald-500",
-      glowColor: "shadow-green-500/50"
-    },
-    {
-      year: "2023",
-      period: "12 Months",
-      role: "Full-Stack Developer",
-      company: "Tech Startup Ecosystem",
-      type: "Development",
-      location: "Remote & On-site",
-      description: "Built scalable web applications serving 10K+ users, specializing in React ecosystem and cloud architecture. Collaborated with cross-functional teams to deliver high-impact products.",
-      achievements: [
-        "Architected microservices handling 1M+ requests/day",
-        "Reduced application load time by 70%",
-        "Implemented CI/CD pipelines saving 40+ hours/week",
-        "Led code reviews and technical mentoring"
-      ],
-      skills: ["React", "Node.js", "AWS", "Docker", "GraphQL"],
-      icon: "💻",
+      skills: ["Salesforce CRM", "Salesforce AI", "Enterprise Solutions", "CRM Configuration"],
+      icon: "☁️",
       color: "from-blue-400 to-cyan-500",
       glowColor: "shadow-blue-500/50"
     },
     {
-      year: "2022-23",
-      period: "18 Months",
-      role: "AR/VR Developer",
-      company: "Immersive Tech Projects",
-      type: "Innovation",
-      location: "Research Lab",
-      description: "Pioneered immersive experiences using cutting-edge AR/VR technologies. Developed applications for education, healthcare, and entertainment sectors.",
+      year: "2023",
+      period: "Jun - Jul 2023",
+      role: "Intern Trainee",
+      company: "Community Of Metaverse",
+      type: "Internship",
+      location: "India",
+      description: "Created AR projects and AR filters under the guidance of AICTE and Meta. Gained hands-on experience with augmented reality development and immersive technologies.",
       achievements: [
-        "Created 5+ VR applications for training simulations",
-        "Developed AR shopping experience with 95% user satisfaction",
-        "Published research paper on spatial computing",
-        "Collaborated with UX teams for intuitive interfaces"
+        "Created multiple AR projects and filters",
+        "Worked under AICTE and Meta guidance",
+        "Top performer in COM program",
+        "Gained expertise in AR development"
       ],
-      skills: ["Unity", "ARCore", "ARKit", "3D Modeling", "Spatial Design"],
+      skills: ["AR Development", "Meta Tools", "Computer Vision", "3D Graphics", "Filter Creation"],
       icon: "🥽",
       color: "from-purple-400 to-pink-500",
       glowColor: "shadow-purple-500/50"
+    },
+    {
+      year: "2022-2024",
+      period: "Multiple Projects",
+      role: "Project Lead & Developer",
+      company: "Personal & Team Projects",
+      type: "Development",
+      location: "Various",
+      description: "Led development of innovative mobile applications focusing on accessibility and social impact. Built solutions using Flutter, AI/ML, and computer vision technologies.",
+      achievements: [
+        "Led Silent Voice - AI sign language translator (3rd Ideathon Taiwan 2025 Winner)",
+        "Developed Orbcura - accessibility app for visually impaired",
+        "Built Aqua Watch - flood management system for India",
+        "Won multiple national and international hackathons"
+      ],
+      skills: ["Flutter", "AI/ML", "Computer Vision", "Team Leadership", "Mobile Development", "Python"],
+      icon: "🚀",
+      color: "from-green-400 to-emerald-500",
+      glowColor: "shadow-green-500/50"
     }
   ];
 

@@ -1,5 +1,20 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { 
+  Users, 
+  Brain, 
+  Eye, 
+  Waves, 
+  ExternalLink, 
+  Github, 
+  Play, 
+  Code, 
+  Award, 
+  Zap,
+  X,
+  Rocket,
+  Briefcase
+} from "lucide-react";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null); // Changed from 0 to null
@@ -7,124 +22,128 @@ export default function Projects() {
 
   const projects = [
     {
-      id: "silentvoice",
-      title: "SilentVoice",
-      subtitle: "AI-Powered Sign Language Translator",
-      category: "AI/ML",
-      description: "Revolutionary AI pipeline that converts sign language gestures into real-time text and speech, breaking communication barriers for the deaf community.",
-      longDescription: "SilentVoice represents a breakthrough in accessibility technology, utilizing advanced computer vision and machine learning algorithms to recognize and translate sign language in real-time. The system processes video input through a sophisticated neural network trained on thousands of sign language gestures, achieving 95% accuracy in translation.",
-      tech: ["React", "TensorFlow.js", "OpenCV", "Flask", "WebRTC", "Python"],
+      id: "linkfluence",
+      title: "LinkFluence",
+      subtitle: "Creator-Brand Collaboration Platform",
+      category: "Web App",
+      description: "A MERN stack platform bridging the gap between small content creators and brands, providing seamless collaboration opportunities with unique features beyond traditional marketplaces.",
+      longDescription: "LinkFluence is an innovative platform built with the MERN stack that connects small content creators with emerging brands. Unlike traditional freelance platforms, LinkFluence focuses specifically on content creation partnerships, offering specialized tools for campaign management, content approval workflows, and performance analytics. The platform features smart matching algorithms, integrated payment systems, and comprehensive portfolio showcases.",
+      tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Stripe API", "Cloudinary", "Socket.io"],
       features: [
-        "Real-time gesture recognition with 95% accuracy",
-        "Multi-language sign language support",
-        "Text-to-speech conversion",
-        "Mobile-responsive web application",
-        "Offline capability for basic gestures"
+        "Smart creator-brand matching algorithm",
+        "Integrated campaign management system",
+        "Real-time collaboration tools",
+        "Portfolio showcase with media management",
+        "Secure payment gateway integration",
+        "Performance analytics dashboard"
       ],
       metrics: {
-        users: "10K+",
-        accuracy: "95%",
-        languages: "3",
-        recognition: "Real-time"
-      },
-      status: "Live",
-      image: "/api/placeholder/600/400",
-      demo: "#",
-      repo: "#",
-      color: "from-green-400 to-cyan-500",
-      icon: "🤟",
-      tags: ["AI", "Accessibility", "Computer Vision", "Social Impact"]
-    },
-    {
-      id: "orbcura",
-      title: "Orbcura",
-      subtitle: "Complete Accessibility Suite",
-      category: "Mobile App",
-      description: "Comprehensive mobile application designed to empower visually and auditorily impaired users with intuitive navigation and communication tools.",
-      longDescription: "Orbcura is a groundbreaking accessibility suite that combines multiple assistive technologies into a single, intuitive mobile application. The app uses advanced AI to provide real-time object recognition, text-to-speech, speech-to-text, and navigation assistance, creating an inclusive digital experience.",
-      tech: ["Flutter", "Dart", "Firebase", "Google ML Kit", "TensorFlow Lite", "ARCore"],
-      features: [
-        "AI-powered object and text recognition",
-        "Voice-guided navigation system",
-        "Real-time audio descriptions",
-        "Customizable UI for different accessibility needs",
-        "Offline mode for core functionalities"
-      ],
-      metrics: {
-        downloads: "5K+",
-        rating: "4.8/5",
-        features: "15+",
-        platforms: "2"
-      },
-      status: "Beta",
-      image: "/api/placeholder/600/400",
-      demo: "#",
-      repo: "#",
-      color: "from-purple-400 to-pink-500",
-      icon: "👁️",
-      tags: ["Mobile", "Accessibility", "AI", "Flutter", "Social Impact"]
-    },
-    {
-      id: "neurospace",
-      title: "NeuroSpace",
-      subtitle: "VR Brain Training Platform",
-      category: "AR/VR",
-      description: "Immersive virtual reality platform that gamifies cognitive training and brain exercises using cutting-edge neuroscience research.",
-      longDescription: "NeuroSpace leverages the power of virtual reality to create engaging brain training experiences. The platform combines neuroscience research with gamification to help users improve memory, focus, and cognitive abilities through immersive 3D environments.",
-      tech: ["Unity", "C#", "Oculus SDK", "SteamVR", "Firebase", "WebGL"],
-      features: [
-        "15+ scientifically-backed brain games",
-        "Progress tracking with detailed analytics",
-        "Multiplayer cognitive challenges",
-        "Adaptive difficulty based on performance",
-        "Cross-platform VR support"
-      ],
-      metrics: {
-        users: "2K+",
-        games: "15+",
-        retention: "85%",
-        improvement: "40%"
+        status: "Development",
+        duration: "5+ months",
+        features: "25+",
+        tech: "MERN"
       },
       status: "Development",
       image: "/api/placeholder/600/400",
       demo: "#",
       repo: "#",
-      color: "from-blue-400 to-indigo-500",
-      icon: "🧠",
-      tags: ["VR", "Unity", "Neuroscience", "Gaming", "Health"]
+      color: "from-blue-400 to-purple-500",
+      icon: () => <img src="/proj1.png" alt="Logo" className="w-12 h-12" />,
+      tags: ["MERN", "Full-Stack", "Platform", "Business", "React"]
     },
     {
-      id: "quantumdash",
-      title: "QuantumDash",
-      subtitle: "Real-time Analytics Platform",
-      category: "Web App",
-      description: "Advanced dashboard application providing real-time analytics and insights for large-scale data processing with quantum-inspired algorithms.",
-      longDescription: "QuantumDash is a next-generation analytics platform that processes massive datasets in real-time using quantum-inspired algorithms. The application provides intuitive visualizations and predictive analytics for enterprise-level decision making.",
-      tech: ["Next.js", "TypeScript", "D3.js", "Node.js", "PostgreSQL", "Redis"],
+      id: "silentvoice",
+      title: "Silent Voice",
+      subtitle: "AI Sign Language Translator",
+      category: "AI/ML",
+      description: "An innovative app that empowers individuals with hearing loss by converting sign language into voice using AI and computer vision, making communication seamless.",
+      longDescription: "Silent Voice is a groundbreaking application that leverages artificial intelligence and computer vision to bridge communication gaps for the auditorily impaired community. The project won 3rd place at Ideathon Taiwan 2025, demonstrating its innovative approach to accessibility technology. The system uses advanced machine learning models to recognize sign language gestures and convert them into speech in real-time.",
+      tech: ["Python", "OpenCV", "TensorFlow", "Computer Vision", "AI/ML", "Flutter"],
       features: [
-        "Real-time data processing (1M+ records/sec)",
-        "Interactive data visualizations",
-        "Predictive analytics with ML models",
-        "Custom dashboard builder",
-        "Enterprise security standards"
+        "Real-time sign language recognition",
+        "AI-powered gesture-to-voice conversion",
+        "Multi-platform compatibility",
+        "Offline capability for basic gestures",
+        "Customizable voice synthesis",
+        "User-friendly interface design"
       ],
       metrics: {
-        processing: "1M/sec",
-        uptime: "99.9%",
-        clients: "50+",
-        data: "10TB+"
+        award: "3rd Place",
+        competition: "Taiwan 2025",
+        accuracy: "High",
+        impact: "Social"
       },
-      status: "Production",
+      status: "Beta",
+      image: "/api/placeholder/600/400",
+      demo: "https://www.linkedin.com/posts/p09s_ai-hackathonwin-teamwork-activity-7287884921702883328-V_8s",
+      repo: "#",
+      color: "from-green-400 to-cyan-500",
+      icon: () => <img src="/proj2.png" alt="Logo" className="w-12 h-12" />,
+      tags: ["AI", "Computer Vision", "Accessibility", "Award Winner", "Social Impact"]
+    },
+    {
+      id: "orbcura",
+      title: "Orbcura",
+      subtitle: "Accessibility Mobile App",
+      category: "Mobile App",
+      description: "A comprehensive mobile app designed to empower visually impaired individuals by simplifying everyday routines through smart technology and UPI payments.",
+      longDescription: "Orbcura is a revolutionary mobile application that enhances accessibility for visually impaired individuals. The app received an FY2024 INNO-vation Generation Award Division Nomination, recognizing its innovative approach to assistive technology. It combines multiple accessibility features including UPI payments, real-time image detection, and voice navigation to create a comprehensive solution for daily tasks.",
+      tech: ["Flutter", "Dart", "Firebase", "UPI API", "Computer Vision", "ML Kit"],
+      features: [
+        "UPI payment integration for easy transactions",
+        "Real-time image detection and description",
+        "Voice-guided navigation system",
+        "Text-to-speech functionality",
+        "Customizable accessibility settings",
+        "Offline mode for core features"
+      ],
+      metrics: {
+        nomination: "INNO-vation",
+        year: "2024",
+        platform: "Mobile",
+        focus: "Accessibility"
+      },
+      status: "Developed",
       image: "/api/placeholder/600/400",
       demo: "#",
-      repo: "#",
-      color: "from-yellow-400 to-orange-500",
-      icon: "📊",
-      tags: ["Web", "Analytics", "Big Data", "Real-time", "Enterprise"]
+      repo: "https://github.com/Developer-Student-Clubs-MMDU/Orbcura.git",
+      color: "from-purple-400 to-pink-500",
+      icon: () => <img src="/proj3.png" alt="Logo" className="w-12 h-12" />,
+      tags: ["Mobile", "Flutter", "Accessibility", "UPI", "Award Nominated"]
+    },
+    {
+      id: "aquawatch",
+      title: "Aqua Watch",
+      subtitle: "Flood Management System",
+      category: "Mobile App",
+      description: "A pioneering mobile application revolutionizing flood management in India through real-time alerts, community reporting, and proactive flood mitigation measures.",
+      longDescription: "Aqua Watch is a comprehensive flood management solution built with Flutter that addresses one of India's most pressing natural disaster challenges. The application leverages real-time data, community engagement, and predictive analytics to help communities prepare for and respond to flooding events. It features crowd-sourced reporting, emergency alerts, and resource coordination tools.",
+      tech: ["Flutter", "Dart", "Firebase", "Google Maps API", "Weather API", "Push Notifications"],
+      features: [
+        "Real-time flood alerts and warnings",
+        "Community-based flood reporting system",
+        "Interactive flood risk mapping",
+        "Emergency contact integration",
+        "Resource coordination for relief efforts",
+        "Historical flood data analysis"
+      ],
+      metrics: {
+        focus: "India",
+        type: "Disaster Management",
+        community: "Crowd-sourced",
+        impact: "National"
+      },
+      status: "Developed",
+      image: "/api/placeholder/600/400",
+      demo: "#",
+      repo: "https://github.com/sushant102004/Aqua-Watch-App.git",
+      color: "from-cyan-400 to-blue-500",
+      icon: () => <img src="/proj4.png" alt="Logo" className="w-12 h-12" />,
+      tags: ["Flutter", "Disaster Management", "Community", "Real-time", "Social Impact"]
     }
   ];
 
-  const categories = ["All", "AI/ML", "Mobile App", "AR/VR", "Web App"];
+  const categories = ["All", "Web App", "AI/ML", "Mobile App"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects = activeCategory === "All" 
@@ -206,7 +225,7 @@ export default function Projects() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     className={`px-3 py-1 rounded-full text-xs font-bold ${
-                      project.status === 'Live' ? 'bg-green-500/20 text-green-300 border border-green-500/50' :
+                      project.status === 'Developed' ? 'bg-green-500/20 text-green-300 border border-green-500/50' :
                       project.status === 'Beta' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/50' :
                       project.status === 'Production' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/50' :
                       'bg-purple-500/20 text-purple-300 border border-purple-500/50'
@@ -220,13 +239,13 @@ export default function Projects() {
                 <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20`}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.span
+                    <motion.div
                       animate={{ rotate: hoveredCard === index ? 360 : 0 }}
                       transition={{ duration: 1 }}
-                      className="text-8xl opacity-50"
+                      className="text-white/50"
                     >
-                      {project.icon}
-                    </motion.span>
+                      <project.icon size={80} strokeWidth={1.5} />
+                    </motion.div>
                   </div>
                   
                   {/* Scan lines effect */}
@@ -245,15 +264,25 @@ export default function Projects() {
                     >
                       <motion.button
                         whileHover={{ scale: 1.1 }}
-                        className="p-3 bg-green-500/20 border border-green-500/50 rounded-full text-green-300 hover:bg-green-500/30 transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (project.demo !== "#") window.open(project.demo, '_blank');
+                        }}
+                        className="p-3 bg-green-500/20 border border-green-500/50 rounded-full text-green-300 hover:bg-green-500/30 transition-colors flex items-center gap-2"
                       >
-                        👁️ View
+                        <ExternalLink size={16} />
+                        View
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
-                        className="p-3 bg-purple-500/20 border border-purple-500/50 rounded-full text-purple-300 hover:bg-purple-500/30 transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (project.repo !== "#") window.open(project.repo, '_blank');
+                        }}
+                        className="p-3 bg-purple-500/20 border border-purple-500/50 rounded-full text-purple-300 hover:bg-purple-500/30 transition-colors flex items-center gap-2"
                       >
-                        💻 Code
+                        <Github size={16} />
+                        Code
                       </motion.button>
                     </motion.div>
                   </motion.div>
@@ -262,7 +291,7 @@ export default function Projects() {
                 {/* Project Content */}
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">{project.icon}</span>
+                    <project.icon size={24} className="text-white" />
                     <span className="text-sm px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full">
                       {project.category}
                     </span>
@@ -338,13 +367,13 @@ export default function Projects() {
                     onClick={() => setActiveProject(null)}
                     className="absolute top-4 right-4 w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:text-red-400 transition-colors"
                   >
-                    ✕
+                    <X size={20} />
                   </button>
 
                   {/* Project detail content */}
                   <div className="mb-6">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-4xl">{projects[activeProject]?.icon}</span>
+                      <project.icon size={48} className="text-white" />
                       <div>
                         <h3 className="text-3xl font-bold gradient-text">
                           {projects[activeProject]?.title}
@@ -365,7 +394,7 @@ export default function Projects() {
                       <ul className="space-y-2">
                         {projects[activeProject]?.features.map((feature, i) => (
                           <li key={i} className="flex items-start gap-3 text-gray-300">
-                            <span className="text-green-400 mt-1">→</span>
+                            <Zap size={16} className="text-green-400 mt-1 flex-shrink-0" />
                             {feature}
                           </li>
                         ))}
@@ -398,6 +427,30 @@ export default function Projects() {
                         </div>
                       ))}
                     </div>
+
+                    {/* Action buttons */}
+                    <div className="flex gap-4 justify-center mt-6">
+                      {projects[activeProject]?.demo !== "#" && (
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          onClick={() => window.open(projects[activeProject]?.demo, '_blank')}
+                          className="btn-neon flex items-center gap-2"
+                        >
+                          <Rocket size={20} />
+                          View Demo
+                        </motion.button>
+                      )}
+                      {projects[activeProject]?.repo !== "#" && (
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          onClick={() => window.open(projects[activeProject]?.repo, '_blank')}
+                          className="px-6 py-3 rounded-full bg-black/40 backdrop-blur-lg border-2 border-purple-400/50 text-purple-300 font-bold hover:border-purple-400 transition-all duration-300 flex items-center gap-2"
+                        >
+                          <Code size={20} />
+                          View Code
+                        </motion.button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -426,15 +479,18 @@ export default function Projects() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 255, 136, 0.6)" }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-neon"
+                className="btn-neon flex items-center gap-2 justify-center"
               >
-                🚀 Start a Project
+                <Rocket size={20} />
+                Start a Project
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 0, 128, 0.6)" }}
-                className="px-8 py-4 rounded-full bg-black/40 backdrop-blur-lg border-2 border-pink-400/50 text-pink-300 font-bold hover:border-pink-400 transition-all duration-300"
+                className="px-8 py-4 rounded-full bg-black/40 backdrop-blur-lg border-2 border-pink-400/50 text-pink-300 font-bold hover:border-pink-400 transition-all duration-300 flex items-center gap-2 justify-center"
+                onClick={() => window.open('https://github.com/p09s', '_blank')}
               >
-                💼 View All Work
+                <Briefcase size={20} />
+                View All Work
               </motion.button>
             </div>
           </div>
