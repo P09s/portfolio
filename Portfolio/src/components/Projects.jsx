@@ -46,7 +46,7 @@ export default function Projects() {
       status: "Development",
       image: "/api/placeholder/600/400",
       demo: "#",
-      repo: "#",
+      repo: "https://github.com/P09s/creator-brand.git",
       color: "from-blue-400 to-purple-500",
       icon: () => <img src="/proj1.png" alt="Logo" className="w-12 h-12" />,
       tags: ["MERN", "Full-Stack", "Platform", "Business", "React"]
@@ -371,87 +371,94 @@ export default function Projects() {
                   </button>
 
                   {/* Project detail content */}
-                  <div className="mb-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <project.icon size={48} className="text-white" />
-                      <div>
-                        <h3 className="text-3xl font-bold gradient-text">
-                          {projects[activeProject]?.title}
-                        </h3>
-                        <p className="text-xl text-green-300">
-                          {projects[activeProject]?.subtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      {projects[activeProject]?.longDescription}
-                    </p>
-
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h4 className="text-xl font-bold neon-text-primary mb-4">Key Features</h4>
-                      <ul className="space-y-2">
-                        {projects[activeProject]?.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-3 text-gray-300">
-                            <Zap size={16} className="text-green-400 mt-1 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Full tech stack */}
-                    <div className="mb-6">
-                      <h4 className="text-xl font-bold neon-text-accent mb-4">Technology Stack</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {projects[activeProject]?.tech.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 bg-gray-800/50 border border-gray-600 rounded-full text-sm text-gray-300 hover:text-white hover:border-gray-400 transition-all"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* All metrics */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {Object.entries(projects[activeProject]?.metrics || {}).map(([key, value], i) => (
-                        <div key={i} className="text-center glass p-4 rounded-xl">
-                          <div className="text-2xl font-bold neon-text-secondary">{value}</div>
-                          <div className="text-sm text-gray-400 capitalize">
-                            {key.replace(/([A-Z])/g, ' $1').trim()}
+                  {(() => {
+                    const currentProject = projects[activeProject];
+                    const IconComponent = currentProject.icon;
+                    
+                    return (
+                      <div className="mb-6">
+                        <div className="flex items-center gap-4 mb-4">
+                          <IconComponent size={48} className="text-white" />
+                          <div>
+                            <h3 className="text-3xl font-bold gradient-text">
+                              {currentProject?.title}
+                            </h3>
+                            <p className="text-xl text-green-300">
+                              {currentProject?.subtitle}
+                            </p>
                           </div>
                         </div>
-                      ))}
-                    </div>
 
-                    {/* Action buttons */}
-                    <div className="flex gap-4 justify-center mt-6">
-                      {projects[activeProject]?.demo !== "#" && (
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          onClick={() => window.open(projects[activeProject]?.demo, '_blank')}
-                          className="btn-neon flex items-center gap-2"
-                        >
-                          <Rocket size={20} />
-                          View Demo
-                        </motion.button>
-                      )}
-                      {projects[activeProject]?.repo !== "#" && (
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          onClick={() => window.open(projects[activeProject]?.repo, '_blank')}
-                          className="px-6 py-3 rounded-full bg-black/40 backdrop-blur-lg border-2 border-purple-400/50 text-purple-300 font-bold hover:border-purple-400 transition-all duration-300 flex items-center gap-2"
-                        >
-                          <Code size={20} />
-                          View Code
-                        </motion.button>
-                      )}
-                    </div>
-                  </div>
+                        <p className="text-gray-300 leading-relaxed mb-6">
+                          {currentProject?.longDescription}
+                        </p>
+
+                        {/* Features */}
+                        <div className="mb-6">
+                          <h4 className="text-xl font-bold neon-text-primary mb-4">Key Features</h4>
+                          <ul className="space-y-2">
+                            {currentProject?.features.map((feature, i) => (
+                              <li key={i} className="flex items-start gap-3 text-gray-300">
+                                <Zap size={16} className="text-green-400 mt-1 flex-shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Full tech stack */}
+                        <div className="mb-6">
+                          <h4 className="text-xl font-bold neon-text-accent mb-4">Technology Stack</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {currentProject?.tech.map((tech, i) => (
+                              <span
+                                key={i}
+                                className="px-3 py-1 bg-gray-800/50 border border-gray-600 rounded-full text-sm text-gray-300 hover:text-white hover:border-gray-400 transition-all"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* All metrics */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                          {Object.entries(currentProject?.metrics || {}).map(([key, value], i) => (
+                            <div key={i} className="text-center glass p-4 rounded-xl">
+                              <div className="text-2xl font-bold neon-text-secondary">{value}</div>
+                              <div className="text-sm text-gray-400 capitalize">
+                                {key.replace(/([A-Z])/g, ' $1').trim()}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Action buttons */}
+                        <div className="flex gap-4 justify-center mt-6">
+                          {currentProject?.demo !== "#" && (
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              onClick={() => window.open(currentProject?.demo, '_blank')}
+                              className="btn-neon flex items-center gap-2"
+                            >
+                              <Rocket size={20} />
+                              View Demo
+                            </motion.button>
+                          )}
+                          {currentProject?.repo !== "#" && (
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              onClick={() => window.open(currentProject?.repo, '_blank')}
+                              className="px-6 py-3 rounded-full bg-black/40 backdrop-blur-lg border-2 border-purple-400/50 text-purple-300 font-bold hover:border-purple-400 transition-all duration-300 flex items-center gap-2"
+                            >
+                              <Code size={20} />
+                              View Code
+                            </motion.button>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })()}
                 </div>
               </motion.div>
             </motion.div>
