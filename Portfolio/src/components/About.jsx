@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Code, Database, Cloud, Cpu, Palette } from "lucide-react";
+
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('profile');
 
   const skills = [
-    { name: "React & Next.js", level: 95, color: "from-cyan-400 to-blue-500", icon: "⚛️" },
+    { name: "React.js + Tailwind.css", level: 95, color: "from-cyan-400 to-blue-500", icon: "⚛️" },
     { name: "AI & Machine Learning", level: 90, color: "from-green-400 to-emerald-500", icon: "🤖" },
-    { name: "AR/VR Development", level: 85, color: "from-purple-400 to-pink-500", icon: "🥽" },
+    { name: "AR & Game Development", level: 85, color: "from-purple-400 to-pink-500", icon: "🥽" },
     { name: "Full-Stack Development", level: 92, color: "from-orange-400 to-red-500", icon: "🔥" },
     { name: "UI/UX Design", level: 88, color: "from-pink-400 to-rose-500", icon: "🎨" },
-    { name: "Cloud & DevOps", level: 82, color: "from-indigo-400 to-purple-500", icon: "☁️" }
+    { name: "Salesforce CRM", level: 82, color: "from-indigo-400 to-purple-500", icon: "☁️" }
   ];
 
   const achievements = [
-    { title: "GDSC President", desc: "Leading 1000+ developers", year: "2025", icon: "👑" },
-    { title: "National Hackathon Winner", desc: "Multiple championship titles", year: "2024", icon: "🏆" },
+    { title: "GDG on Campus President", desc: "Leading 1000+ developers", year: "2025", icon: "👑" },
+    { title: "International Hackathon Winner", desc: "Multiple championship titles", year: "2024", icon: "🏆" },
     { title: "AI Innovation Award", desc: "Breakthrough in neural interfaces", year: "2024", icon: "🧠" },
     { title: "Open Source Contributor", desc: "500+ contributions", year: "2023", icon: "💻" }
   ];
@@ -24,6 +26,9 @@ export default function About() {
     inactive: { y: 10, opacity: 0.6 },
     active: { y: 0, opacity: 1 }
   };
+
+  const [activeReady, setActiveReady] = useState(false);
+
 
   return (
     <section
@@ -67,37 +72,73 @@ export default function About() {
         </h2>
         <div className="w-32 h-1 bg-gradient-to-r from-green-400 via-purple-400 to-pink-400 mx-auto rounded-full"></div>
       </motion.div>
+      
 
-      {/* Tab Navigation - Fixed positioning */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 glass-hover p-2 rounded-full max-w-4xl mx-auto"
+      {/* Tab Navigation - Animated Active State */}
+{/* Tab Navigation - Animated Active State (shows green only after move finishes) */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 glass-hover p-2 rounded-full max-w-4xl mx-auto"
+>
+  {[
+    { id: 'profile', label: 'Profile', icon: '👨‍💻' },
+    { id: 'skills', label: 'Skills', icon: '⚡' },
+    { id: 'achievements', label: 'Achievements', icon: '🏆' }
+  ].map((tab) => (
+    <motion.button
+      key={tab.id}
+      initial="inactive"
+      variants={tabVariants}
+      animate={activeTab === tab.id ? 'active' : 'inactive'}
+      transition={{ duration: 0.35, type: 'spring', stiffness: 300, damping: 24 }}
+      onClick={() => {
+        if (tab.id !== activeTab) {
+          // reset 'ready' and switch tab; the ready flag will be set when the movement animation completes
+          setActiveReady(false);
+          setActiveTab(tab.id);
+        }
+      }}
+      onAnimationComplete={() => {
+        // when this button's animate finishes, if it's the active tab mark it as ready
+        if (activeTab === tab.id) setActiveReady(true);
+      }}
+      className="px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base relative overflow-hidden"
+      aria-pressed={activeTab === tab.id && activeReady}
+    >
+      {/* ONLY render the green/fill/border AFTER the move animation finished */}
+      {activeTab === tab.id && activeReady && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.25 }}
+          className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-purple-400/20 rounded-full border-2 border-green-400/50"
+        />
+      )}
+
+      {/* Tab Content — stays gray until activeReady is true */}
+      <span
+        className={`relative z-10 mr-2 ${
+          activeTab === tab.id && activeReady ? 'neon-text-primary' : 'text-gray-400'
+        }`}
       >
-        {[
-          { id: 'profile', label: 'Profile', icon: '👨‍💻' },
-          { id: 'skills', label: 'Skills', icon: '⚡' },
-          { id: 'achievements', label: 'Achievements', icon: '🏆' }
-        ].map((tab) => (
-          <motion.button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            variants={tabVariants}
-            animate={activeTab === tab.id ? 'active' : 'inactive'}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
-              activeTab === tab.id
-                ? 'bg-gradient-to-r from-green-400/20 to-purple-400/20 border-2 border-green-400/50 neon-text-primary'
-                : 'text-gray-400 hover:text-white border-2 border-transparent hover:border-white/20'
-            }`}
-          >
-            <span className="mr-2">{tab.icon}</span>
-            <span className="hidden sm:inline">{tab.label}</span>
-          </motion.button>
-        ))}
-      </motion.div>
+        {tab.icon}
+      </span>
+      <span
+        className={`relative z-10 hidden sm:inline ${
+          activeTab === tab.id && activeReady
+            ? 'neon-text-primary'
+            : 'text-gray-400 hover:text-white'
+        }`}
+      >
+        {tab.label}
+      </span>
+    </motion.button>
+  ))}
+</motion.div>
+
+
 
       {/* Content Area */}
       <div className="max-w-7xl w-full">
@@ -195,62 +236,60 @@ export default function About() {
         )}
 
         {/* Skills Tab */}
-        {activeTab === 'skills' && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="glass p-6 rounded-xl border border-white/10 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-3xl group-hover:scale-110 transition-transform">
-                    {skill.icon}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-bold text-white group-hover:neon-text-primary transition-all">
-                      {skill.name}
-                    </h3>
-                    <div className="text-sm text-gray-400">{skill.level}% Proficiency</div>
-                  </div>
-                </div>
-                
-                {/* Skill Bar */}
-                <div className="relative">
-                  <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1.5, delay: index * 0.1 }}
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
-                    >
-                      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                    </motion.div>
-                  </div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 1 + index * 0.1 }}
-                    className="absolute -top-8 right-0 text-sm font-bold neon-text-primary"
-                  >
-                    {skill.level}%
-                  </motion.div>
-                </div>
-                
-                {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+        {/* Skills Tab - Professional Grid */}
+        {/* Skills Tab - Professional Grid */}
+{activeTab === 'skills' && (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+  >
+    {skills.map((skill, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ delay: index * 0.1 }}
+        whileHover={{ scale: 1.05 }}
+        className="glass p-6 rounded-xl border border-white/10 hover:border-green-400/40 transition-all duration-300 flex flex-col items-start gap-4"
+      >
+        {/* Icon + Name */}
+        <div className="flex items-center gap-4">
+          {skill.name === "Frontend" && <Code className="w-8 h-8 text-green-400" />}
+          {skill.name === "Backend" && <Database className="w-8 h-8 text-purple-400" />}
+          {skill.name === "Cloud" && <Cloud className="w-8 h-8 text-blue-400" />}
+          {skill.name === "AI/ML" && <Cpu className="w-8 h-8 text-pink-400" />}
+          {skill.name === "Design" && <Palette className="w-8 h-8 text-yellow-400" />}
+          <h3 className="text-lg font-bold text-white">{skill.name}</h3>
+        </div>
+
+        {/* New Proficiency Tag */}
+        <span
+          className={`px-3 py-1 rounded-full text-xs font-semibold ${
+            skill.level >= 90
+              ? "bg-green-500/20 text-green-300"
+              : skill.level >= 80
+              ? "bg-blue-500/20 text-blue-300"
+              : "bg-gray-500/20 text-gray-300"
+          }`}
+        >
+          {skill.level >= 90
+            ? "🚀 Project-Proven"
+            : skill.level >= 80
+            ? "✅ Hands-on"
+            : "🌱 Growing"}
+        </span>
+
+        {/* Description */}
+        <p className="text-gray-400 text-sm leading-relaxed">
+          {skill.description ||
+            `Practical experience with ${skill.name}, building scalable and real-world solutions.`}
+        </p>
+      </motion.div>
+    ))}
+  </motion.div>
+)}
 
         {/* Achievements Tab */}
         {activeTab === 'achievements' && (
